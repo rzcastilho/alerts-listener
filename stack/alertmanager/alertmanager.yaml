@@ -1,0 +1,9 @@
+route:
+  group_by: [ alertname ]
+  receiver: 'webhook' # default receiver
+  repeat_interval: 5m
+
+receivers:
+  - name: 'webhook'
+    webhook_configs:
+      - url: "http://172.17.0.1:4000/alerts"
